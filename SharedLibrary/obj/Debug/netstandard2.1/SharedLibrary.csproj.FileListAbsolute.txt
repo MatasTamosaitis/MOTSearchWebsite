@@ -1,0 +1,10 @@
+C:\MOTProject\MOTSearchWebsite\SharedLibrary\bin\Debug\netstandard2.1\SharedLibrary.deps.json
+C:\MOTProject\MOTSearchWebsite\SharedLibrary\bin\Debug\netstandard2.1\SharedLibrary.dll
+C:\MOTProject\MOTSearchWebsite\SharedLibrary\bin\Debug\netstandard2.1\SharedLibrary.pdb
+C:\MOTProject\MOTSearchWebsite\SharedLibrary\obj\Debug\netstandard2.1\SharedLibrary.csproj.AssemblyReference.cache
+C:\MOTProject\MOTSearchWebsite\SharedLibrary\obj\Debug\netstandard2.1\SharedLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\MOTProject\MOTSearchWebsite\SharedLibrary\obj\Debug\netstandard2.1\SharedLibrary.AssemblyInfoInputs.cache
+C:\MOTProject\MOTSearchWebsite\SharedLibrary\obj\Debug\netstandard2.1\SharedLibrary.AssemblyInfo.cs
+C:\MOTProject\MOTSearchWebsite\SharedLibrary\obj\Debug\netstandard2.1\SharedLibrary.csproj.CoreCompileInputs.cache
+C:\MOTProject\MOTSearchWebsite\SharedLibrary\obj\Debug\netstandard2.1\SharedLibrary.dll
+C:\MOTProject\MOTSearchWebsite\SharedLibrary\obj\Debug\netstandard2.1\SharedLibrary.pdb

@@ -1,0 +1,125 @@
+﻿@page "/RegisterDetails"
+@inject HttpClient Http
+@using Newtonsoft.Json;
+@using SharedLibrary
+
+<h3 style="padding: 10px">Register MOT Details</h3>
+
+<EditForm Model="@_model" OnValidSubmit="@RegisterMOTDetails">
+    <DataAnnotationsValidator />
+    <div class="row" style="padding: 10px">
+        <div class="col-6 col-md-2">
+            <label>Registration Number: </label>
+        </div>
+
+        <div class="col-10">
+            <InputText class="col-2" style="border: 1px solid" @bind-Value="_model.RegistrationNumber" />
+
+        </div>
+
+    </div>
+
+    <div class="col-md-5"><ValidationMessage For="@(() => _model.RegistrationNumber)" /> </div>
+
+
+    <div class="row" style="padding: 10px">
+        <div class="col">
+            <label>Make: </label>
+        </div>
+
+        <div class="col-10">
+            <InputText class="col-2" style="border: 1px solid" @bind-Value="_model.Make" />
+
+        </div>
+
+    </div>
+
+    <div class="col-md-5"><ValidationMessage For="@(() => _model.Make)" /> </div>
+
+    <div class="row" style="padding: 10px">
+        <div class="col">
+            <label>Model: </label>
+        </div>
+
+        <div class="col-10">
+            <InputText class="col-2" style="border: 1px solid" @bind-Value="_model.Model" />
+
+        </div>
+
+    </div>
+
+    <div class="col-md-5"><ValidationMessage For="@(() => _model.Model)" /> </div>
+
+    <div class="row" style="padding: 10px">
+        <div class="col">
+            <label>Color </label>
+        </div>
+
+        <div class="col-10">
+            <InputText class="col-2" style="border: 1px solid" @bind-Value="_model.Colour" />
+
+        </div>
+
+    </div>
+
+    <div class="col-md-5"><ValidationMessage For="@(() => _model.Colour)" /> </div>
+
+    <div class="row" style="padding: 10px">
+        <div class="col">
+            <input class="btn btn-primary client-btn" type="submit" value="register" />
+        </div>
+    </div>
+</EditForm>
+
+
+@if (_isSuccesful)
+{
+    <div class="col-md-5">
+
+        <label style="color: darkgreen; font-size: 25px">@_succesfulMessage </label>
+    </div>
+}
+
+@if (_unsuccesful)
+{
+    <div class="col-md-5">
+
+        <label style="color: red; font-size: 20px">@_unsuccesfulMessage </label>
+    </div>
+}
+
+
+@code {
+
+    MOTDetailModel _model = new MOTDetailModel();
+    private bool _isSuccesful = false;
+    private bool _unsuccesful = false;
+    private string _succesfulMessage = "Details succesfully registered!";
+    private string _unsuccesfulMessage = "Oops! there was an error registering your details please try again";
+
+    /// <summary>
+    /// Post the data to the api to create the registration details.
+    /// </summary>
+    /// <returns></returns>
+    private async Task RegisterMOTDetails()
+    {
+
+        // Serialize the data into a json object.
+        var content = new StringContent(JsonConvert.SerializeObject(_model), System.Text.Encoding.UTF8, "application/json");
+
+        // Send a post request to insert the details into the database.
+        var response = await Http.PostAsync("http://localhost:7071/api/AddMOTRegistration", content);
+
+        // Check if the response has a succesful status.
+        if (response.IsSuccessStatusCode)
+        {
+            _isSuccesful = true;
+
+        }
+        else
+        {
+            _unsuccesful = true;
+        }
+    }
+
+}
