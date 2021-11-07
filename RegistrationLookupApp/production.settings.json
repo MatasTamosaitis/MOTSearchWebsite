@@ -1,0 +1,17 @@
+
+  {
+    "IsEncrypted": false,
+    "Values": {
+      "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+      "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+      "DefaultConnection": "Server=tcp:mot-registration-server.database.windows.net,1433;Initial Catalog=RegistrationDetails;Persist Security Info=False;User ID=motUser;Password=@8BrPKCvqR3Zv@i;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+    },
+
+    "Host": {
+      "LocalHttpPort": 7071,
+      "CORS": "*",
+      "CORSCredentials": false
+    }
+
+  }
+
